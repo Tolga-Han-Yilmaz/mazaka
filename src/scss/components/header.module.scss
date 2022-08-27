@@ -16,13 +16,17 @@ header {
         ul {
           display: flex;
           justify-content: center;
+          flex-direction: column;
+          align-items: center;
           gap: 1rem;
           li {
             cursor: pointer;
+            color: $white;
+
             @include transition(0.5s);
 
             &:hover {
-              color: $white;
+              color: $black;
             }
           }
         }
@@ -35,10 +39,11 @@ header {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       .navbar__search {
-        grid-column: span 8;
+        grid-column: span 12;
+        width: 90%;
       }
       .navbar__user {
-        grid-column: span 4;
+        grid-column: span 12;
         display: flex;
         justify-content: center;
         gap: 3rem;

@@ -1,6 +1,5 @@
 // @import "./components/nav.module.scss";
 // @import "./components/main.module.scss";
-// @import "./components/responsive";
 
 // import the functions & variables
 @import "../../node_modules/bootstrap/scss/_functions";
@@ -24,6 +23,7 @@ $custom-theme-colors: (
 @import "./components/productcategory.module.scss";
 @import "./components/productinfo.module.scss";
 @import "./components/footer.module.scss";
+@import "./components/responsive";
 
 body {
   line-height: 1;

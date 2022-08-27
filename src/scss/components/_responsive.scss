@@ -1,0 +1,37 @@
+@include media-xsm {
+}
+@include media-sm {
+  header {
+    .header__title {
+      .container {
+        .header__title-lists {
+          ul {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            align-items: center;
+          }
+        }
+      }
+    }
+    .navbar {
+      .container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        .navbar__search {
+          grid-column: span 8;
+        }
+        .navbar__user {
+          grid-column: span 4;
+        }
+      }
+    }
+  }
+}
+@include media-md {
+}
+
+@include media-lg {
+}
+@include media-xl {
+}
