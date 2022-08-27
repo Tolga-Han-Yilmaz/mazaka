@@ -1,0 +1,150 @@
+.productlist {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+  .card {
+    grid-column: span 12;
+    margin: auto;
+    position: relative;
+    width: 320px;
+    height: 450px;
+    background: $gray-100;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $green;
+      clip-path: circle(150px at 80% 20%);
+      transition: 0.5s ease-in-out;
+    }
+    &:hover:before {
+      clip-path: circle(300px at 80% -20%);
+    }
+    &:after {
+      content: "MAZAKA";
+      position: absolute;
+      top: 45%;
+      left: -10%;
+      font-size: 5em;
+      font-weight: 800;
+      font-style: italic;
+      color: $orange-200;
+    }
+    .imgBx {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10000;
+      width: 100%;
+      height: 220px;
+      @include transition(0.5s);
+    }
+    &:hover .imgBx {
+      top: 0%;
+      transform: translateY(0%);
+    }
+    .imgBx img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 270px;
+    }
+    .contentBx {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100px;
+      text-align: center;
+      transition: 1s;
+      z-index: 10;
+    }
+    &:hover .contentBx {
+      height: 210px;
+    }
+    .contentBx h2 {
+      position: relative;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin: 0;
+    }
+    .contentBx .size,
+    .contentBx .color {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 8px 20px;
+      transition: 0.5s;
+      opacity: 0;
+      visibility: hidden;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    &:hover .contentBx .size {
+      opacity: 1;
+      visibility: visible;
+      transition-delay: 0.5s;
+    }
+    &:hover .contentBx .color {
+      opacity: 1;
+      visibility: visible;
+      transition-delay: 0.6s;
+    }
+    .contentBx .size h3,
+    .contentBx .color h3 {
+      font-weight: 300;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-right: 10px;
+    }
+    .contentBx .size span {
+      width: 48px;
+      height: 26px;
+      text-align: center;
+      line-height: 26px;
+      font-size: 0.75rem;
+      display: inline-block;
+      background: $white;
+      margin: 0 5px;
+      transition: 0.5s;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .contentBx .size span:hover {
+      background: $orange;
+    }
+
+    .contentBx a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: $white;
+      border-radius: 4px;
+      margin-top: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      color: $black;
+      opacity: 0;
+      transform: translateY(50px);
+      margin-top: 0;
+      @include transition(0.3s);
+
+      &:hover {
+        background-color: $green;
+        color: $white;
+      }
+    }
+    &:hover .contentBx a {
+      opacity: 1;
+      transform: translateY(0px);
+      transition-delay: 0.1s;
+    }
+  }
+}

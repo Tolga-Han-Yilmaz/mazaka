@@ -1,0 +1,32 @@
+footer {
+  display: grid;
+  justify-content: center;
+  margin-top: 3rem;
+  .footer__div {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    .col {
+      grid-column: span 12;
+      gap: 2rem;
+      margin: auto;
+    }
+    .footer__media {
+      cursor: pointer;
+      font-size: 2rem;
+      grid-column: span 12;
+      margin-bottom: 1rem;
+      .footer__icon:nth-child(1) {
+        color: $blue-800;
+      }
+      .footer__icon:nth-child(2) {
+        color: $red-400;
+      }
+      .footer__icon:nth-child(3) {
+        color: $blue-400;
+      }
+      .footer__icon:nth-child(4) {
+        color: $red;
+      }
+    }
+  }
+}

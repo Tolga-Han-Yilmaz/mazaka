@@ -1,6 +1,6 @@
 import { FaShoppingCart, FaRegUser, FaSearch } from "react-icons/fa";
 // FaSearch, FaShoppingCart, FaRegUser
-// FaShoppingBasket, FaCarrot, FaCheese, FaChild(atıştırmalık), FaOilCan, FaRaspberryPi, FaAppleAlt, FaBreadSlice, FaCookieBite, FaMugHot
+
 const Header = () => {
   return (
     <header>
