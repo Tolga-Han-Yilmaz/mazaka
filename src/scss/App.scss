@@ -1,0 +1,34 @@
+// @import "./components/nav.module.scss";
+// @import "./components/main.module.scss";
+// @import "./components/footer.module.scss";
+// @import "./components/responsive";
+
+// import the functions & variables
+@import "../../node_modules/bootstrap/scss/_functions";
+@import "../../node_modules/bootstrap/scss/_variables";
+
+$custom-theme-colors: (
+  "themeblue": #0367a6,
+  "themegreen": #4f7302,
+  "themeyellow": #f2b705,
+  "themeorange": #f27405,
+  "themered": #a6290d,
+);
+
+// import bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./abstracts/mixin", "./abstracts/variables";
+@import "./base/reset";
+
+@import "./components/header.module.scss";
+@import "./components/loading.module.scss";
+
+body {
+  line-height: 1;
+  color: $gray-900;
+  height: 100vh;
+}
+
+ul {
+  list-style-type: none;
+}

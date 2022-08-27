@@ -1,0 +1,58 @@
+header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  .header__title {
+    display: flex;
+    justify-content: center;
+    background-color: $orange;
+    padding: 1rem;
+    .container {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      .header__title-lists {
+        ul {
+          display: flex;
+          justify-content: center;
+          gap: 1rem;
+          li {
+            cursor: pointer;
+            @include transition(0.5s);
+
+            &:hover {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+  .navbar {
+    padding: 1rem;
+    .container {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      .navbar__search {
+        grid-column: span 8;
+      }
+      .navbar__user {
+        grid-column: span 4;
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        .icon {
+          font-size: 1.6rem;
+          cursor: pointer;
+
+          &:nth-child(1) {
+            color: $green;
+          }
+          &:nth-child(2) {
+            color: $green-600;
+          }
+        }
+      }
+    }
+  }
+}
