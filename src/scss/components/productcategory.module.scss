@@ -5,7 +5,7 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     .category__btn-filter {
-      grid-column: span 6;
+      grid-column: span 4;
       background: transparent;
       border-color: transparent;
       font-size: 1rem;
@@ -13,7 +13,6 @@
       margin: 0 0.5rem;
       letter-spacing: 1px;
       padding: 0.375rem 0.75rem;
-      border: 1px solid red;
 
       cursor: pointer;
       @include transition(0.5s);

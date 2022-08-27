@@ -20,7 +20,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: $green;
+      background: $green-200;
       clip-path: circle(150px at 80% 20%);
       transition: 0.5s ease-in-out;
     }
@@ -112,7 +112,7 @@
       line-height: 26px;
       font-size: 0.75rem;
       display: inline-block;
-      background: $white;
+      background: $green;
       margin: 0 5px;
       transition: 0.5s;
       border-radius: 4px;
@@ -120,6 +120,7 @@
     }
     .contentBx .size span:hover {
       background: $orange;
+      color: $white;
     }
 
     .contentBx a {

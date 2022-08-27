@@ -18,7 +18,7 @@ const ProductInfo = ({ productsList }) => {
                   })}
                 </div>
                 <div className="color">
-                  <h2>{product.price}</h2>
+                  <h2>{product.price} ₺</h2>
                 </div>
                 <a href="#">Satın Al</a>
               </div>
