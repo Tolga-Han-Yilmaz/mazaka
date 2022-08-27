@@ -2,8 +2,8 @@
 // @import "./components/main.module.scss";
 
 // import the functions & variables
-@import "../../node_modules/bootstrap/scss/_functions";
-@import "../../node_modules/bootstrap/scss/_variables";
+@import "../../node_modules/bootstrap/scss/_functions.scss";
+@import "../../node_modules/bootstrap/scss/_variables.scss";
 
 $custom-theme-colors: (
   "themeblue": #0367a6,

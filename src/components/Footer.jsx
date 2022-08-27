@@ -30,7 +30,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer>
+    <footer className="bg-themeblue">
       <div className="footer__div container">
         <div className="footer__kurumsal col">
           <h4>Kurumsal</h4>

@@ -30,6 +30,7 @@ const productsSlice = createSlice({
   extraReducers: {
     [getProducts.pending]: (state, action) => {
       state.loading = true;
+      state.isShow = true;
     },
     [getProducts.fulfilled]: (state, { payload }) => {
       state.loading = false;
@@ -40,20 +41,6 @@ const productsSlice = createSlice({
     },
   },
 });
-
-// const products = createSlice({
-//   name: "Products",
-//   initialState,
-//   reducers: {
-//     setProducts: (state, action) => {
-//       state.products = action.payload;
-//     },
-
-//     appendProducts: (state, action) => {
-//       state.products = [...state.products, action.payload];
-//     },
-//   },
-// });
 
 export const { clearProductsList } = productsSlice.actions;
 export default productsSlice.reducer;
