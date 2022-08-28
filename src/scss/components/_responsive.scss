@@ -4,12 +4,14 @@
   header {
     .header__title {
       .container {
+        justify-content: space-between;
+        flex-direction: row;
         .header__title-lists {
+          display: flex;
           ul {
             display: flex;
-            justify-content: center;
+            margin: auto;
             flex-direction: row;
-            align-items: center;
           }
         }
       }

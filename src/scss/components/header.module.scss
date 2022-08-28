@@ -12,6 +12,18 @@ header {
       display: flex;
       justify-content: center;
       flex-direction: column;
+      .header__title-home {
+        text-align: center;
+        h1 {
+          color: $green;
+          cursor: pointer;
+          @include transition(0.5s);
+          font-weight: 800;
+          &:hover {
+            color: $green-600;
+          }
+        }
+      }
       .header__title-lists {
         ul {
           display: flex;

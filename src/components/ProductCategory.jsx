@@ -1,16 +1,4 @@
 import React from "react";
-import {
-  FaShoppingBasket,
-  FaCarrot,
-  FaCheese,
-  FaChild,
-  FaOilCan,
-  FaRaspberryPi,
-  FaAppleAlt,
-  FaBreadSlice,
-  FaCookieBite,
-  FaMugHot,
-} from "react-icons/fa";
 
 const ProductCategory = ({ categoryList, handleFiltered }) => {
   return (

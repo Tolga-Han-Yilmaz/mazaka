@@ -1,0 +1,44 @@
+.productdetails {
+  margin: 3rem auto;
+  .card {
+    .row {
+      .card-body {
+        span {
+          width: 48px;
+          height: 26px;
+          text-align: center;
+          line-height: 26px;
+          font-size: 0.75rem;
+          display: inline-block;
+          background: $green;
+          margin: 0 5px;
+          transition: 0.5s;
+          border-radius: 4px;
+          cursor: pointer;
+          &:hover {
+            background: $orange;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+
+  button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: $white;
+    border-radius: 4px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: $black;
+    border: none;
+    @include transition(0.3s);
+
+    &:hover {
+      background-color: $green;
+      color: $white;
+    }
+  }
+}

@@ -2,34 +2,28 @@ import React, { useEffect, useState } from "react";
 import ProductCategory from "../components/ProductCategory";
 import ProductInfo from "../components/ProductInfo";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  clearProductsList,
-  getProducts,
-  getDetails,
-} from "../features/productsSlice";
+import { getProducts } from "../features/productsSlice";
 import Loading from "../components/Loading";
-import axios from "axios";
+
 const Home = () => {
+  // productsSlice.jsx'de axios ile çağrılan ürünler buruya gönderildi.
   const dispatch = useDispatch();
   const { productsList, loading } = useSelector((state) => state.products);
 
+  // state
   const [menuItems, setMenuItems] = useState(productsList);
   const [isShow, setIsShow] = useState(false);
-  // useEffect(() => {
-  //   dispatch(getProducts());
-  //   return () => {
-  //     dispatch(clearProductsList());
-  //   };
-  // }, [dispatch]);
+
+  // ürünleri kategorilere ayırmak için filter kullanıldı
   const categories = productsList.map((item) => {
     return item.category;
   });
+
+  // ürünlerde aynı kategoriden birden çok olduğu için set işlemi yapıldı
   const categoryList = ["Hepsi", ...new Set(categories)];
+
+  // fonksiyon parent componente tanımladı. child(ProductCategory.jsx) componente props olarak gönderilerek kategorinin alınmasını sağlandı
   const handleFiltered = (category) => {
-    // if (category === "Hepsi") {
-    //   setMenuItems(productsList);
-    //   return;
-    // }
     if (category !== "Hepsi") {
       const newItems = productsList?.filter(
         (item) => item.category === category
@@ -40,10 +34,13 @@ const Home = () => {
     }
     setIsShow(false);
   };
+
+  // useEffect
   useEffect(() => {
     dispatch(getProducts());
     setMenuItems(productsList);
     setIsShow(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

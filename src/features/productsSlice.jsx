@@ -6,8 +6,10 @@ const initialState = {
   loading: true,
 };
 
+// Gönderilen api isteğini doğrudan güncelleyebilmek için middleware kullandım. Redux-Toolkit'de default olarak Thunk kullanmaktadır. Thunk'ın amacı reducers'a işlenmiş sonuçları göndermeden önce gecikmeli asenkron işlemlerin yürütülmesini sağlamaktır.
+
 export const getProducts = createAsyncThunk(
-  "products,getProducts",
+  "products/getProducts", // action type ismi
   async () => {
     const url = `https://powerful-savannah-74330.herokuapp.com/data`;
     try {
@@ -30,7 +32,6 @@ const productsSlice = createSlice({
   extraReducers: {
     [getProducts.pending]: (state, action) => {
       state.loading = true;
-      state.isShow = true;
     },
     [getProducts.fulfilled]: (state, { payload }) => {
       state.loading = false;

@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 
 const ProductInfo = ({ menuItems, isShow, productsList }) => {
@@ -6,8 +7,8 @@ const ProductInfo = ({ menuItems, isShow, productsList }) => {
   const handleClick = async (id) => {
     const navigateToDetail = await productsList?.filter(
       (product) => product.id === id
-    );
-    await navigate("/product", { state: navigateToDetail });
+    ); // Ürüne tıklandığında detay sayfasının açılması için filtreleme yapıldı.
+    await navigate("/product", { state: navigateToDetail }); // ProductDetail.jsx'e gönderildi
   };
   return (
     <div>
@@ -29,14 +30,18 @@ const ProductInfo = ({ menuItems, isShow, productsList }) => {
                     <div className="color">
                       <h2>{product.price} ₺</h2>
                     </div>
-                    <a href="#">Satın Al</a>
+                    <button>Satın Al</button>
                   </div>
                 </div>
               );
             })
           : menuItems?.map((product) => {
               return (
-                <div className="card">
+                <div className="card" onClick={() => handleClick(product.id)}>
+                  <Helmet>
+                    <title>{product.category}</title>
+                    <meta name="description" content={product.category} />
+                  </Helmet>
                   <div className="imgBx">
                     <img src={product.image} alt={product.name} />
                   </div>
@@ -50,7 +55,7 @@ const ProductInfo = ({ menuItems, isShow, productsList }) => {
                     <div className="color">
                       <h2>{product.price} ₺</h2>
                     </div>
-                    <a href="#">Satın Al</a>
+                    <button>Satın Al</button>
                   </div>
                 </div>
               );
