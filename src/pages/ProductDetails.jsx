@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { useNavigate, useLocation } from "react-router-dom";
+import ReactImageMagnify from "react-image-magnify";
 
 const ProductDetails = () => {
   // ProductInfo.jsx'den gönderilen state
@@ -18,7 +19,20 @@ const ProductDetails = () => {
       <div className="card mb-3">
         <div className="row g-0">
           <div className="col-md-6">
-            <img src={image} className="img-fluid rounded-start" alt={name} />
+            <ReactImageMagnify
+              {...{
+                smallImage: {
+                  alt: { name },
+                  isFluidWidth: true,
+                  src: image,
+                },
+                largeImage: {
+                  src: image,
+                  width: 800,
+                  height: 1200,
+                },
+              }}
+            />
           </div>
           <div className="col-md-6">
             <article className="card-body">
